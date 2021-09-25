@@ -733,6 +733,58 @@ https://templatemo.com/tm-516-known
     color: #ffffff;
   }
   
+    /*---------------------------------------
+      OFFERS             
+  -----------------------------------------*/
+
+  #offers {
+    background: #3f51b5;
+  }
+
+  #offers h2 {
+    color: #ffffff;
+  }
+
+  #offers .section-title {
+    padding-bottom: 20px;
+  }
+
+  #offers h2 > small,
+  #offers p,
+  #offers a {
+    color: #f9f9f9;
+  }
+
+  #offers-form {
+    padding: 1em 0;
+  }
+
+  #offers-form .col-md-12,
+  #offers-form .col-md-4 {
+    padding-left: 0;
+  }
+
+  #offers-form .form-control {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: none;
+    margin: 10px 0;
+  }
+
+  #offers-form input {
+    height: 50px;
+  }
+
+  #offers-form input[type='submit'] {
+    border-radius: 50px;
+    border: 1px solid transparent;
+  }
+
+  #offers-form input[type='submit']:hover {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
 
 
 
@@ -832,6 +884,20 @@ https://templatemo.com/tm-516-known
   /*---------------------------------------
      SOCIAL ICON              
   -----------------------------------------*/
+
+.whats-app {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    right: 15px;
+	background-color: #25d366;
+}
+
 
   .social-icon {
     position: relative;
