@@ -10,7 +10,6 @@
      <meta name="keywords" content="">
      <meta name="author" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/font-awesome.min.css">
      <link rel="stylesheet" href="css/owl.carousel.css">
@@ -18,6 +17,70 @@
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
+	 <script src="js/jquery.js"></script>
+	 <script type="text/javascript">
+	 $(document).ready(function(){
+	      $('#AvailtheoffersNow').click(function(){
+		  
+            var sname=$('#name').val()
+			var smobile=$('#mobile').val()
+			var semail=$('#email').val()
+			
+            $.ajax({
+                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Leads',
+                method: 'POST',
+                data: {
+
+                    name: sname ,
+                    mobile: smobile,
+                    email: semail,
+					date:''
+
+                },
+                success: function () {
+                    
+                      window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
+                },
+                error: function () {
+
+                   window.alert('Thank you for showing interest in the project. Soon we will call you for exciting offers');
+                }
+
+            });
+	      });
+		  
+		$('#sendMessage').click(function(){
+		  
+            var scontactName=$('#contactName').val()
+			var scontactPhone=$('#contactPhone').val()
+			var scontactMessage=$('#contactMessage').val()
+			
+            $.ajax({
+                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/Email',
+                method: 'POST',
+                data: {
+
+                    ToAddress: 'vinay.shukla88@gmail.com' ,
+                    Subject: 'Customer Communication from ' + scontactName + ' (' + scontactPhone + ')',
+                    Body: scontactMessage
+
+                },
+                success: function () {
+                    
+                      window.alert('Thank you for contacting us. Soon we will reply to your query');
+                },
+                error: function () {
+
+                   window.alert('Thank you for contacting us. Soon we will reply to your query');
+                }
+
+            });
+	      });
+		  
+
+		  
+	 });
+	 </script>
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -59,7 +122,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><i class="fa fa-phone"></i> +91 9555101838</a></li>
+					<li><a href="#"><i class="fa fa-phone"></i>+91 9555101838</a></li>
 				</ul>
 			</div>
 
@@ -78,7 +141,7 @@
 							<div class="col-md-6 col-sm-12">
 								<h1>Best Mivan Based Flats at resonable rates</h1>
 								<h3>Nirala Estate is strategically located in Greater Noida West and is a well-planned project. It is spread over a sprawling area of 25 Acre</h3>
-								<a href="#feature" class="section-btn btn btn-default smoothScroll">Discover more</a>
+								<a href="#offers" class="section-btn btn btn-default smoothScroll">Let's get offers & discount</a>
 							</div>
 						</div>
 					</div>
@@ -90,7 +153,7 @@
 							<div class="col-md-6 col-sm-12">
 								<h1>Phase II is about to deliver in march 2022.</h1>
 								<h3>The units are all Under Construction. The different types of units available are Flat, which have been designed to offer complete satisfaction.</h3>
-								<a href="#courses" class="section-btn btn btn-default smoothScroll">Take a course</a>
+								<a href="#offers" class="section-btn btn btn-default smoothScroll">Let's get offers & discount</a>
 							</div>
 						</div>
 					</div>
@@ -102,7 +165,7 @@
 							<div class="col-md-6 col-sm-12">
 								<h1>Nirala Estate is like living in at one of the most serene places</h1>
 								<h3>Its a home you will cherish.Thats the beauty of Nirala Estate, inspired by the charm of modern and contemporary lifestyle.</h3>
-								<a href="#contact" class="section-btn btn btn-default smoothScroll">Let's chat</a>
+								<a href="#offers" class="section-btn btn btn-default smoothScroll">Let's get offers & discount</a>
 							</div>
 						</div>
 					</div>
@@ -114,7 +177,7 @@
 							<div class="col-md-6 col-sm-12">
 								<h1>It is a beautifully constructed Residential property that is sure to please you</h1>
 								<h3>In Second, third , fourth and fifth phase, almost 2000 flats will be delivered which are purely mivan based (concrete shuttering)</h3>
-								<a href="#contact" class="section-btn btn btn-default smoothScroll">Let's chat</a>
+								<a href="#offers" class="section-btn btn btn-default smoothScroll">Let's get offers & discount</a>
 							</div>
 						</div>
 					</div>
@@ -123,34 +186,38 @@
 			</div>
 		</div>
 	</section>
+	
 
+    <a class="whats-app" target="_blank" href="https://api.whatsapp.com/send/?phone=919555101838&text&app_absent=0"><i class="fa fa-whatsapp" style="font-size:55px;color:white"></i></a>
+	
 
+    
  	<!-- FEATURE -->
-	<section id="contact">
+	<section id="offers">
 		<div class="container">
 
 			<div class="row">
 
 				<div class="col-md-6 col-sm-12">
-					<form id="contact-form" role="form" action="" method="post">
+					<div id="offers-form" >
 						<div class="section-title">
 							<h2>Enquire Now for Special Offers & Benefits!</h2>
 						</div>
 
 						<div class="col-md-12 col-sm-12">
-							<input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+							<input type="text" class="form-control" placeholder="Enter full name" name="name" id="name" required="">
 
-							<input type="text" class="form-control" placeholder="Enter mobile number" name="mobile" required="">
+							<input type="text" class="form-control" placeholder="Enter mobile number" name="mobile" id="mobile" required="">
 
-							<input type="text" class="form-control" placeholder="Enter email address" name="email" required="">
+							<input type="text" class="form-control" placeholder="Enter email address" name="email" id="email" required="">
 
 						</div>
 
 						<div class="col-md-4 col-sm-12">
-							<input type="submit" class="form-control" name="Avail the offers Now" value="Avail the offers Now">
+							<a  class="section-btn btn btn-default smoothScroll" name="AvailtheoffersNow" id="AvailtheoffersNow"  href="#">Avail the offers Now</a>
 						</div>
 
-					</form>
+					</div>
 				</div>
 
 			</div>
@@ -659,24 +726,24 @@
 			<div class="row">
 
 				<div class="col-md-6 col-sm-12">
-					<form id="contact-form" role="form" action="" method="post">
+					<div id="contact-form" >
 						<div class="section-title">
 							<h2>Contact us <small>we love conversations. let us talk!</small></h2>
 						</div>
 
 						<div class="col-md-12 col-sm-12">
-							<input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+							<input type="text" class="form-control" placeholder="Enter full name" name="contactName" id="contactName" required="">
 
-							<input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+							<input type="mobile" class="form-control" placeholder="Enter mobile number" name="contactPhone" id="contactPhone" required="">
 
-							<textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+							<textarea class="form-control" rows="6" placeholder="Tell us about your message" name="contactMessage" id="contactMessage" required=""></textarea>
 						</div>
 
 						<div class="col-md-4 col-sm-12">
-							<input type="submit" class="form-control" name="send message" value="Send Message">
+							<a  class="section-btn btn btn-default smoothScroll" name="sendMessage" id="sendMessage" style="background-color:blue"  href="#">Send Message</a>
 						</div>
 
-					</form>
+					</div>
 				</div>
 
 				<div class="col-md-6 col-sm-12">
@@ -731,9 +798,9 @@
 		</div>
 	</footer>
 
-
+   
      <!-- SCRIPTS -->
-     <script src="js/jquery.js"></script>
+     
      <script src="js/bootstrap.min.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
