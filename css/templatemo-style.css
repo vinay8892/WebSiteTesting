@@ -889,12 +889,12 @@ https://templatemo.com/tm-516-known
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 40px;
+    bottom: 10px;
     border-radius: 50px;
     text-align: center;
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
-    right: 15px;
+    right: 40px;
 	background-color: #25d366;
 }
 
