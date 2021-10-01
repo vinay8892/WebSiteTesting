@@ -77,6 +77,28 @@
             });
 	      });
 		  
+		  
+		  $('#SubscribeForNewsLetter').click(function(){
+		  
+            var snewsLetterEmail=$('#newsLetterEmail').val()
+			
+            $.ajax({
+                url: 'https://tgroz9ryhi.execute-api.ap-south-1.amazonaws.com/Prod/api/NewsLetter',
+                method: 'POST',
+                data: {
+                    email: snewsLetterEmail 
+                },
+                success: function () {
+                    
+                      window.alert('Congratulations. Now you are subscribed to our monthly news letter');
+                },
+                error: function () {
+
+                   window.alert('Congratulations. Now you are subscribed to our monthly news letter');
+                }
+
+            });
+	      });
 
 		  
 	 });
@@ -785,8 +807,8 @@
 						<div>
 							<div class="form-group">
 								<form action="#" method="get">
-									<input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
-									<input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
+									<input type="email" class="form-control" placeholder="Enter your email" name="newsLetterEmail" id="newsLetterEmail" required="">
+									<a  class="section-btn btn btn-default smoothScroll" name="SubscribeForNewsLetter" id="SubscribeForNewsLetter"  href="#">Send me</a>
 								</form>
 								<span><sup>*</sup> Please note - we do not spam your email.</span>
 							</div>
