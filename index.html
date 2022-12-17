@@ -53,6 +53,60 @@
 		background-color: #25d366;
 		}
 		
+		  /*---------------------------------------
+      HOME  & SLIDER            
+  -----------------------------------------*/
+
+  #home {
+    padding: 0;
+  }
+
+  #home h1 {
+    color: #ffffff;
+  }
+
+  #home h3 {
+    color: #f9f9f9;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 5px 0 40px 0;
+  }
+
+  @media (min-width: 768px) {
+    .home-slider .col-md-6 {
+      padding-left: 0;
+    }
+  }
+
+  .home-slider .caption {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    background-color: rgba(20,20,20,0.2);
+    height: 100%;
+    color: #fff;
+    cursor: e-resize;
+  }
+
+  .home-slider .item {
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: cover;
+    height: 650px;
+  }
+  
+  .caption h3 a { color: #FFF; }
+  .caption h3 a:hover { color: #FF3; }
+
+  .home-slider .item-third {
+    background-image: url(../images/1.jpg);
+	
+  }
+
+
+
 
   </style>
   
@@ -94,56 +148,31 @@
 		  </div>
 	  </div>
     <!-- END nav -->
-    
+    <section id="home">
+
+
+		<div class="row">
+
+			<div class="owl-carousel owl-theme home-slider">
+				<div class="item item-third">
+					<div class="caption">
+						<div class="container">
+							<div class="col-md-6 col-sm-12">
+								<h1>Best Mivan Based Flats at resonable rates</h1>
+								<h3>Nirala Estate is strategically located in Noida Extension (Greater Noida West) and is a well-planned project. It is spread over a sprawling area of 25 Acre</h3>
+								<a href="#offers" class="section-btn btn btn-default smoothScroll">Let's get offers & discount</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>		
+	</section>
 	<a class="whats-app" target="_blank" href="https://api.whatsapp.com/send/?phone=919792866866&text&lang=En&app_absent=0"><i class="fa fa-whatsapp" style="font-size:50px;color:white"></i></a>
 	
-    <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('images/1.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text align-items-center" data-scrollax-parent="true">
-            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">K.D.Public School Jamon</h1>
-              <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">an English Medium, Co-Educational School which is aimed to produce greater tallents for the country.</p>
-              <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">Make an Enquiry</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="slider-item" style="background-image: url('images/2.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text align-items-center" data-scrollax-parent="true">
-            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Best English Medium School</h1>
-              <p class="mb-4">K.D.Public School is an educational milestone created,carved and being nurtured by the most acclaimed academicians.</p>
-              <p><a href="#" class="btn btn-primary px-4 py-3">Make an Enquiry</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-	  <div class="slider-item" style="background-image: url('images/3.jpeg');">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text align-items-center" data-scrollax-parent="true">
-            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-
-            </div>
-          </div>
-        </div>
-      </div>
-	 <div class="slider-item" style="background-image: url('images/3.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text align-items-center" data-scrollax-parent="true">
-            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="ftco-intro">
     	<div class="container">
