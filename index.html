@@ -53,7 +53,44 @@
 		background-color: #25d366;
 		}
 
+.m-banner{
+  display: none !important;
+}
 
+@media only screen and (max-width: 600px){
+  .d-banner{
+    display: none !important;
+  }
+  .m-banner{
+    display: block !important;
+  }
+}
+ .slide {
+ display: none;
+ }
+ 
+ /* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.mySlides {
+  width: 100%;
+  height: 100%;
+  background: #bbb;
+  color:#ddd;
+  text-align: center;
+  line-height: 320px;
+  font-size: 640px;
+  }
+  
   </style>
   
   </head>
@@ -94,46 +131,53 @@
 		  </div>
 	  </div>
     <!-- END nav -->
-	 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-	                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <img class="d-banner" src="images/1.jpg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                        <img class="m-banner" src="images/1.jpg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                    </div>
-                                    <div class="item">
-                                        <img class="d-banner" src="images/2.jpg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                        <img class="m-banner" src="images/2.jpg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                    </div>
-
-                                    <div class="item">
-                                        <img class="d-banner" src="images/3.jpeg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                        <img class="m-banner" src="images/3.jpeg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                    </div>
-                                    <div class="item">
-                                        <img class="d-banner" src="images/3.jpg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                        <img class="m-banner" src="images/3.jpg"
-                                             alt="K.D.Public School"
-                                             style="width: 100%">
-                                    </div>
-                                
-
-                                </div>
-             </div>
 	
+		<div class="slideshow">
+			<div class="mySlides">
+				<img class="d-banner" src="images/1.jpg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+				<img class="m-banner" src="images/1.jpg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+			</div>
+			
+			<div class="mySlides">
+				<img class="d-banner" src="images/2.jpg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+				<img class="m-banner" src="images/2.jpg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+			</div>
+
+			<div class="mySlides">
+				<img class="d-banner" src="images/3.jpeg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+				<img class="m-banner" src="images/3.jpeg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+			</div>
+			<div class="mySlides">
+				<img class="d-banner" src="images/3.jpg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+				<img class="m-banner" src="images/3.jpg"
+					 alt="K.D.Public School"
+					 style="width: 100%">
+			</div>
+		
+		</div>
+	
+	<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
 	<a class="whats-app" target="_blank" href="https://api.whatsapp.com/send/?phone=919792866866&text&lang=En&app_absent=0"><i class="fa fa-whatsapp" style="font-size:50px;color:white"></i></a>
 	
 
@@ -540,6 +584,40 @@ and success</p>
   
 //}); 
     </script>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+setInterval(function() {
+    plusSlides(1);
+}, 5000);
+
+</script>
 		
   </body>
 </html>
